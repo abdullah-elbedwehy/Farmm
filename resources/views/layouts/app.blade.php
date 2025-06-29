@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>@yield('title', 'Farm System')</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
     {{-- Tailwind CDN (for simple use) --}}
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>

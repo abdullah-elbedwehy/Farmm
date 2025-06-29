@@ -18,8 +18,18 @@ class UserController extends Controller
         User::create($response);
 
         return redirect()->intended('/login');
-        
+
     }
+    public function logout(Request $request)
+    {
+        Auth::logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect()->intended('/');
+    }
+
     public function login(Request $request)
     {
         $credentials = $request->validate([
