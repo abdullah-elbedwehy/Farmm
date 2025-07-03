@@ -28,4 +28,7 @@ Route::get(
         return view('main');
     }
 );
+Route::get('/react', function () {
+    return view('react');
+});
 Route::post('/logout', [UserController::class, 'logout']);
