@@ -12,7 +12,7 @@ def start():
         print('Server already running.')
         return
     try:
-        proc = subprocess.Popen(['php', 'artisan', 'serve'])
+        proc = subprocess.Popen(['python3', 'app.py'])
         with open(PID_FILE, 'w') as f:
             f.write(str(proc.pid))
         print(f'Server started with PID {proc.pid}')
@@ -36,7 +36,7 @@ def stop():
 
 def test():
     try:
-        subprocess.check_call(['php', 'artisan', 'test'])
+        subprocess.check_call(['pytest'])
     except subprocess.CalledProcessError as e:
         print('Tests failed')
         sys.exit(e.returncode)
